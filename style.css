@@ -1,0 +1,58 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+header {
+   display: flex;
+}
+
+.score {
+   text-align: right;
+   margin: 20px 0  0 300px;
+
+}
+
+.board {
+   display: flex;
+   /* flex-wrap: wrap; */
+   width: 450px;
+   margin-top: 50px;
+ }
+ 
+ .sqr {
+   width: 50px;
+   aspect-ratio: 1/1;
+   border: 2px solid black;
+ }
+
+ .sticks {
+   display: flex;
+   width: 200px;
+   justify-content: space-evenly;
+ }
+
+ .stick {
+   display: flex;
+   width: 30px;
+   height: 100px;
+   background-color: yellowgreen;
+ }
+
+.flat {
+   background-color: aqua;
+}
+
+.round {
+   background-color: darkred;
+}
+
+
+/* 
+ .right-side {
+
+
+ } */
+
+ 
+
