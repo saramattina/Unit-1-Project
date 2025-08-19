@@ -62,10 +62,31 @@ const removeFlatClass = (e) => {
 
 const init = () => {
   board = [
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
   ];
+
   squareEls.forEach((sqr) => (sqr.textContent = ""));
   turnMessageEl.textContent = "Let's play! 🔴 goes first!";
+  rollMessageEl.textContent = "";
   winner = false;
   currentPlayer = "🔴";
   playerRedScore.textContent = `Red: ${redScore}`;
@@ -78,41 +99,39 @@ const init = () => {
 };
 
 //placePiece
-//maybe stretch goal: first roll is to place piece on board[0]
 //target current piece place with board[i]
-
 //add spaces to move to current board[i]
 //place piece in new board[i]
 //remove piece from previous board[i] to prevent having multiple pieces on board
 
-const findPiece = (squareEls) => {
-   // i is never passed in here
-  return squareEls.id;
-};
-
-let pieceIdx;
-let currentPieceSqr;
-
-const placePiece = () => {
-   // currentPieceSqr is always -1 because we're not passing in argument to findPiece
-  currentPieceSqr = board.findIndex(findPiece);
-  pieceIdx = (currentPieceSqr + spacesToMove);
-
-  board[pieceIdx] = currentPlayer;
-
-
-  console.log("current piece sqr" + currentPieceSqr)
-  console.log("new piece idx:" + pieceIdx);
-
-  //   console.log(board.findIndex(findPiece))
-  updateBoard();
-};
-
 const updateBoard = () => {
-//    console.log(board.findIndex(placePiece));
+  //    console.log(board.findIndex(placePiece));
+  if (oldPieceIdx.textContent !== ""){
+   board[oldPieceIdx] = "";
+  }
   board.forEach((sqr, idx) => {
     squareEls[idx].textContent = sqr;
   });
+
+};
+
+let newPieceIdx;
+let oldPieceIdx;
+let squareElsArray;
+
+const placePiece = () => {
+  squareElsArray = Array.from(squareEls);
+  oldPieceIdx = squareElsArray.findIndex(
+    (squareEl) => squareEl.textContent === currentPlayer
+  );
+
+  // console.log(pieceIdx)
+
+  newPieceIdx = oldPieceIdx + spacesToMove;
+  board[newPieceIdx] = currentPlayer;
+  // console.log("new idx: " + newPieceIdx);
+
+  updateBoard();
 };
 
 // console.log(updateBoard)
@@ -139,21 +158,25 @@ const switchPlayerTurn = () => {
   removeFlatClass(stickThree);
   removeFlatClass(stickFour);
   // stick.classList.remove("round", "flat");
-  // need remove flat or round class from sticks
 };
 //^partially taken from my tic tac toe lab
 
 const rollSticks = (e) => {
   const randomNum = Math.random();
-  // let roll = randomNum < 0.5 ? "flat-side" : "round-side";
   // console.log(roll)
 
   if (randomNum < 0.5) {
     e.classList.add("flat");
   } else {
-    return;
-    // will default to round
+    return; // will default to round
   }
+};
+
+const handleWinner = () => {
+  //if current player piece idx is greater than 20, that player wins
+  //show win message
+  //if no winner, keep playing
+  //*** ^when I add the if (!winner) switch turns, the rollBtn stops working
 };
 
 //event listeners
@@ -165,46 +188,35 @@ rollBtn.addEventListener("click", () => {
   rollSticks(stickFour);
 
   if (numFlatSticks.length === 0) {
-    turnMessageEl.textContent =
-      "You rolled a yut! Put a piece on the board or move forward 4 spaces!";
+    rollMessageEl.textContent = "You rolled a yut! Move forward 4 spaces and roll again!";
     spacesToMove = 4;
   } else if (numFlatSticks.length === 1) {
-    turnMessageEl.textContent =
-      "You rolled a do! Put a piece on the board or move forward 1 space!";
+    rollMessageEl.textContent = "You rolled a do! Move forward 1 space!";
     spacesToMove = 1;
   } else if (numFlatSticks.length === 2) {
-    turnMessageEl.textContent =
-      "You rolled a ge! Put a piece on the board or move forward 2 spaces!";
+    rollMessageEl.textContent = "You rolled a ge! Move forward 2 spaces!";
     spacesToMove = 2;
   } else if (numFlatSticks.length === 3) {
-    turnMessageEl.textContent =
-      "You rolled a geol! Put a piece on the board or move forward 3 spaces!";
+    rollMessageEl.textContent = "You rolled a geol! Move forward 3 spaces!";
     spacesToMove = 3;
   } else {
-    turnMessageEl.textContent =
-      "You rolled a mo! Put a piece on the board or move forward 5 spaces!";
+    rollMessageEl.textContent = "You rolled a mo! Move forward 5 spaces and roll again!";
     spacesToMove = 5;
   }
 
   placePiece();
-   //  updateBoard();
+  updateBoard();
 
-//   if (!winner) {
-//      switchPlayerTurn()};
+  if (!winner) {
+    switchPlayerTurn();
+  }
 
   //   console.log(numFlatSticks.length);
 });
-//*** ^when I add the if (!winner) switch turns, the rollBtn stops working
+
 
 resetBtn.addEventListener("click", init);
 
 init();
 
 //<dialog> for instructions?
-
-//first move
-//if no pieces are on the board, piece automatically gets placed on first square
-
-// const firstPiece = () => {
-
-// }
