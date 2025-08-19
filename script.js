@@ -29,6 +29,7 @@ let winner = false;
 let currentPlayer = "🔴";
 let redScore = 0;
 let blueScore = 0;
+let rollAgain = false;
 
 let spacesToMove;
 
@@ -55,10 +56,6 @@ const turnMessage = () => `It's ${currentPlayer}'s turn!`;
 const winMessage = `${currentPlayer} has won!`;
 
 //functions
-
-const removeFlatClass = (e) => {
-  e.classList.remove("flat");
-};
 
 const init = () => {
   board = [
@@ -88,6 +85,7 @@ const init = () => {
   turnMessageEl.textContent = "Let's play! 🔴 goes first!";
   rollMessageEl.textContent = "";
   winner = false;
+  rollAgain = false;
   currentPlayer = "🔴";
   playerRedScore.textContent = `Red: ${redScore}`;
   playerBlueScore.textContent = `Blue: ${blueScore}`;
@@ -104,15 +102,28 @@ const init = () => {
 //place piece in new board[i]
 //remove piece from previous board[i] to prevent having multiple pieces on board
 
+const rollSticks = (e) => {
+  const randomNum = Math.random();
+//   console.log(randomNum)
+  if (randomNum < 0.5) {
+    e.classList.add("flat");
+  } else {
+    return; // will default to round
+  }
+};
+
+const removeFlatClass = (e) => {
+  e.classList.remove("flat");
+};
+
 const updateBoard = () => {
   //    console.log(board.findIndex(placePiece));
-  if (oldPieceIdx.textContent !== ""){
-   board[oldPieceIdx] = "";
+  if (oldPieceIdx.textContent !== "") {
+    board[oldPieceIdx] = "";
   }
   board.forEach((sqr, idx) => {
     squareEls[idx].textContent = sqr;
   });
-
 };
 
 let newPieceIdx;
@@ -131,89 +142,81 @@ const placePiece = () => {
   board[newPieceIdx] = currentPlayer;
   // console.log("new idx: " + newPieceIdx);
 
-  updateBoard();
+  //   updateBoard();
 };
 
-// console.log(updateBoard)
-//^taken from my tic tac toe lab
+const handleRollAgain = () => {
+   if (numFlatSticks.length === 0 || numFlatSticks.length === 4) {
+      rollAgain = true;
+   } else {
+      rollAgain = false;
+   }
+}
 
-//is there a way to keep only the last red or blue in the array?
-//reverse array, filter or find for first value, reverse array again
-//or use indexOf in some way?
-//findLastIndex() ?
-
-// const reverseBoard = board.reverse();
-// reverseBoard.filter()
-// board = reverseBoard.reverse();
-// console.log(reverseBoard)
+//check for numFlatSides & scoping issues
 
 const switchPlayerTurn = () => {
   currentPlayer = currentPlayer === "🔴" ? "🔵" : "🔴";
-  if (!winner) {
-    turnMessageEl.innerText = turnMessage();
-  }
-
-  removeFlatClass(stickOne);
-  removeFlatClass(stickTwo);
-  removeFlatClass(stickThree);
-  removeFlatClass(stickFour);
-  // stick.classList.remove("round", "flat");
+  turnMessageEl.innerText = turnMessage();
 };
+
 //^partially taken from my tic tac toe lab
 
-const rollSticks = (e) => {
-  const randomNum = Math.random();
-  // console.log(roll)
+const checkForWinner = () => {
+//if current player piece idx is greater than 20, that player wins
+//show win message
+//if no winner, keep playing
 
-  if (randomNum < 0.5) {
-    e.classList.add("flat");
-  } else {
-    return; // will default to round
-  }
-};
+if () {
+   winner = true;
+} else;
 
-const handleWinner = () => {
-  //if current player piece idx is greater than 20, that player wins
-  //show win message
-  //if no winner, keep playing
-  //*** ^when I add the if (!winner) switch turns, the rollBtn stops working
 };
 
 //event listeners
 
 rollBtn.addEventListener("click", () => {
+  removeFlatClass(stickOne);
+  removeFlatClass(stickTwo);
+  removeFlatClass(stickThree);
+  removeFlatClass(stickFour);
+
   rollSticks(stickOne);
   rollSticks(stickTwo);
   rollSticks(stickThree);
   rollSticks(stickFour);
 
+  handleRollAgain();
+
   if (numFlatSticks.length === 0) {
-    rollMessageEl.textContent = "You rolled a yut! Move forward 4 spaces and roll again!";
+    rollMessageEl.textContent =
+      `${currentPlayer} rolled a yut! Move forward 4 spaces and roll again!`;
     spacesToMove = 4;
   } else if (numFlatSticks.length === 1) {
-    rollMessageEl.textContent = "You rolled a do! Move forward 1 space!";
+    rollMessageEl.textContent = `${currentPlayer} rolled a do! Move forward 1 space!`;
     spacesToMove = 1;
   } else if (numFlatSticks.length === 2) {
-    rollMessageEl.textContent = "You rolled a ge! Move forward 2 spaces!";
+    rollMessageEl.textContent = `${currentPlayer} rolled a ge! Move forward 2 spaces!`;
     spacesToMove = 2;
   } else if (numFlatSticks.length === 3) {
-    rollMessageEl.textContent = "You rolled a geol! Move forward 3 spaces!";
+    rollMessageEl.textContent = `${currentPlayer} rolled a geol! Move forward 3 spaces!`;
     spacesToMove = 3;
   } else {
-    rollMessageEl.textContent = "You rolled a mo! Move forward 5 spaces and roll again!";
+    rollMessageEl.textContent =
+      `${currentPlayer} rolled a mo! Move forward 5 spaces and roll again!`;
     spacesToMove = 5;
   }
 
   placePiece();
   updateBoard();
+//   checkForWinner();
 
-  if (!winner) {
+  if (!winner && !rollAgain) {
     switchPlayerTurn();
-  }
+  } else;
 
   //   console.log(numFlatSticks.length);
 });
-
 
 resetBtn.addEventListener("click", init);
 
