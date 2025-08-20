@@ -1,4 +1,7 @@
-/** remember to clean up any unused variables, functions, etc... **/
+/* remember to clean up any unused variables, functions, etc... */
+/* checkForWinner not working- error at line 120 when moving piece to index not part of the array*/
+
+/* add score update to checkForWinner*/
 
 // Variables
 
@@ -82,25 +85,20 @@ const init = () => {
   ];
 
   squareEls.forEach((sqr) => (sqr.textContent = ""));
-  turnMessageEl.textContent = "Let's play! 🔴 goes first!";
-  rollMessageEl.textContent = "";
   winner = false;
   rollAgain = false;
   currentPlayer = "🔴";
+  turnMessageEl.textContent = turnMessage();
+  rollMessageEl.textContent = "";
   playerRedScore.textContent = `Red: ${redScore}`;
   playerBlueScore.textContent = `Blue: ${blueScore}`;
+  rollBtn.disabled = false;
   // console.log(turnMessageEl)
   removeFlatClass(stickOne);
   removeFlatClass(stickTwo);
   removeFlatClass(stickThree);
   removeFlatClass(stickFour);
 };
-
-//placePiece
-//target current piece place with board[i]
-//add spaces to move to current board[i]
-//place piece in new board[i]
-//remove piece from previous board[i] to prevent having multiple pieces on board
 
 const rollSticks = (e) => {
   const randomNum = Math.random();
@@ -136,12 +134,19 @@ const placePiece = () => {
     (squareEl) => squareEl.textContent === currentPlayer
   );
 
-  // console.log(pieceIdx)
-
   newPieceIdx = oldPieceIdx + spacesToMove;
-  board[newPieceIdx] = currentPlayer;
-  // console.log("new idx: " + newPieceIdx);
 
+  if (newPieceIdx > board.length -1) { //<--- check for winner
+   winner = true;
+   turnMessageEl.textContent = `${currentPlayer} has won!`;
+   rollMessageEl.textContent = "";
+   rollBtn.disabled = true;
+   return;
+ } else {
+
+  board[newPieceIdx] = currentPlayer;
+//   console.log("new idx: " + newPieceIdx);
+ }
   //   updateBoard();
 };
 
@@ -162,16 +167,6 @@ const switchPlayerTurn = () => {
 
 //^partially taken from my tic tac toe lab
 
-const checkForWinner = () => {
-//if current player piece idx is greater than 20, that player wins
-//show win message
-//if no winner, keep playing
-
-if () {
-   winner = true;
-} else;
-
-};
 
 //event listeners
 
@@ -209,13 +204,11 @@ rollBtn.addEventListener("click", () => {
 
   placePiece();
   updateBoard();
-//   checkForWinner();
 
   if (!winner && !rollAgain) {
     switchPlayerTurn();
   } else;
 
-  //   console.log(numFlatSticks.length);
 });
 
 resetBtn.addEventListener("click", init);
