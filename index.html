@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yoot</title>
+    <title>Yoot!</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,6 +16,17 @@
   <body>
     <header>
       <h1>Yoot</h1>
+      <!-- <dialog open>
+         <div class="rules">
+            <h4>How to Play:</h4>
+            <ol>
+               <li></li>
+            </ol>
+         </div>
+         <form method="dialog">
+           <button>I'm ready to play!</button>
+         </form>
+       </dialog> -->
       <div class="score">
         <h3>Scores:</h3>
         <p id="player-red-score"></p>
@@ -24,47 +35,58 @@
     </header>
 
     <section class="board">
-      <div class="sqr" id="0"></div>
-      <div class="sqr" id="1"></div>
-      <div class="sqr" id="2"></div>
-      <div class="sqr" id="3"></div>
-      <div class="sqr" id="4"></div>
-      <div class="sqr" id="5"></div>
+      <div class="top-side">
+        <div class="sqr" id="0"></div>
+        <div class="sqr" id="1"></div>
+        <div class="sqr" id="2"></div>
+        <div class="sqr" id="3"></div>
+        <div class="sqr" id="4"></div>
+       
+      </div>
 
-      <!-- <div class="right-side"> -->
-      <div class="sqr" id="6"></div>
-      <div class="sqr" id="7"></div>
-      <div class="sqr" id="8"></div>
-      <div class="sqr" id="9"></div>
-      <!-- </div> -->
+      <div class="right-side">
+         <div class="sqr" id="5"></div>
+        <div class="sqr" id="6"></div>
+        <div class="sqr" id="7"></div>
+        <div class="sqr" id="8"></div>
+        <div class="sqr" id="9"></div>
+        <div class="sqr" id="10"></div>
+       
+      </div>
 
-      <div class="sqr" id="10"></div>
-      <div class="sqr" id="11"></div>
-      <div class="sqr" id="12"></div>
-      <div class="sqr" id="13"></div>
-      <div class="sqr" id="14"></div>
-      <div class="sqr" id="15"></div>
-      <div class="sqr" id="16"></div>
+      <div class="bottom-side">
+         
+        <div class="sqr" id="11"></div>
+        <div class="sqr" id="12"></div>
+        <div class="sqr" id="13"></div>
+        <div class="sqr" id="14"></div>
+        <div class="sqr" id="15"></div>
+        
+      </div>
 
-      <!-- <div class="left-side"> -->
-      <div class="sqr" id="17"></div>
-      <div class="sqr" id="18"></div>
-      <div class="sqr" id="19"></div>
-      <div class="sqr" id="20"></div>
-      <!-- </div> -->
+      <div class="left-side">
+         <div class="sqr" id="16"></div>
+        <div class="sqr" id="17"></div>
+        <div class="sqr" id="18"></div>
+        <div class="sqr" id="19"></div>
+        <!-- <div class="sqr" id="20"></div> -->
+      </div>
     </section>
 
-    <div class="roll-message"></div>
-    <div class="turn-message"></div>
+    <div class="messages">
+      <p class="roll-message"></p>
+      <p class="turn-message"></p>
+    </div>
+    <!-- <div class="turn-message"></div> -->
 
     <button class="roll">Roll!</button>
 
     <section class="sticks">
-      <div class="stick" id="stick-one"></div>
+      <div class="stick" id="stick-one">X X X</div>
       <!-- can add round and flat classes -->
-      <div class="stick" id="stick-two"></div>
-      <div class="stick" id="stick-three"></div>
-      <div class="stick" id="stick-four"></div>
+      <div class="stick" id="stick-two">X X X</div>
+      <div class="stick" id="stick-three">X X X</div>
+      <div class="stick" id="stick-four">X X X</div>
 
       <p class="roll-result"></p>
     </section>

@@ -88,11 +88,14 @@ const init = () => {
   winner = false;
   rollAgain = false;
   currentPlayer = "🔴";
+  let redScore = 0;
+  let blueScore = 0;
   turnMessageEl.textContent = turnMessage();
   rollMessageEl.textContent = "";
   playerRedScore.textContent = `Red: ${redScore}`;
   playerBlueScore.textContent = `Blue: ${blueScore}`;
   rollBtn.disabled = false;
+  resetBtn.textContent = "Reset";
   // console.log(turnMessageEl)
   removeFlatClass(stickOne);
   removeFlatClass(stickTwo);
@@ -141,6 +144,16 @@ const placePiece = () => {
    turnMessageEl.textContent = `${currentPlayer} has won!`;
    rollMessageEl.textContent = "";
    rollBtn.disabled = true;
+   resetBtn.textContent = "Play again?"
+      if (currentPlayer === "🔴"){
+         redScore = redScore + 1;
+         playerRedScore.textContent = `Red: ${redScore}`;
+         return;
+      } else {
+         blueScore = blueScore + 1;
+         playerBlueScore.textContent = `Blue: ${blueScore}`;
+         return;
+      }
    return;
  } else {
 

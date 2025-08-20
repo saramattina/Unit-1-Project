@@ -1,65 +1,3 @@
-/* * {
-   margin: 0;
-   padding: 0;
-   font-family: "Merienda", cursive;
-}
-
-header {
-   display: flex;
-}
-
-h1 {
-   margin: 50px 0 0 50px;
-}
-
-.score {
-   text-align: right;
-   margin: 50px 50px  0 300px;
-}
-
-.board {
-   display: flex; */
-   /* flex-wrap: wrap; */
-    /* width: 450px;
-   margin: 50px auto auto 50px;
- } 
- 
- 
- .sqr {
-   width: 50px;
-   aspect-ratio: 1/1;
-   border: 2px solid black;
- }
-
- .sticks {
-   display: flex;
-   width: 200px;
-   justify-content: space-evenly;
- }
-
- .stick {
-   display: flex;
-   width: 30px;
-   height: 100px;
-   background-color: yellowgreen;
- }
-
-.flat {
-   background-color: aqua;
-} */
-
-
-/* .roll-message {
-   margin: 50px auto 0 180px;
-}
-
-.turn-message {
-   margin: 30px auto 0 180px;
-} */
-
-
-
-
 * {
    margin: 0;
    padding: 0;
@@ -83,10 +21,10 @@ h1 {
  
  .board {
    display: flex;
-   justify-content: flex-start; /* keeps row layout */
-   gap: 8px;                   /* space between squares */
-   width: max-content;          /* shrink to fit the squares */
-   margin: 50px auto;           /* center horizontally */
+   justify-content: flex-start; 
+   gap: 8px;                   
+   width: max-content;          
+   margin: 50px auto;           
    padding: 10px;
    background-color: #fafafa;
    border-radius: 8px;
@@ -101,11 +39,10 @@ h1 {
    align-items: center;
    font-size: 1.5rem;  
    background-color: white;
-   transition: background 0.3s;
  }
  
- .sqr.active {
-   background-color: #ffe680;  /* optional highlight for current piece */
+ .sqr.hover {
+   background-color: #ffe680;  
  }
  
  .sticks {
@@ -120,7 +57,7 @@ h1 {
    width: 30px;
    height: 100px;
    background-color: yellowgreen;
-   border-radius: 8px;
+   border-radius: 7px;
    /* transition: background 0.3s; */
  }
  
@@ -145,12 +82,40 @@ h1 {
    background-color: #ffe680;
  }
 
- .roll-message, .turn-message {
+ .messages {
    text-align: center;
    margin: 50px auto;
    font-size: 1.25rem;
-   /* position: absolute; */
  }
 
 
- 
+.left-side, .right-side {
+   display: flex;
+   gap: 10px;
+   flex-direction: column;
+   /* margin-top: 300px; */
+}
+
+.top-side, .bottom-side {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.bottom-side {
+   margin-top: 533px;
+   transform: translate(-317px);
+   flex-direction: row-reverse;
+}
+
+
+.right-side {
+   margin-top: 268px;
+}
+
+.left-side {
+   margin-top: 321px;
+   transform: translate(-581px, -55px);
+   display: flex;
+   flex-direction: column-reverse;
+}
