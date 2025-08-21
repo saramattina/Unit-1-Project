@@ -6,7 +6,7 @@
  
  header {
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
    padding: 50px;
  }
@@ -23,8 +23,9 @@
    display: flex;
    justify-content: flex-start; 
    gap: 8px;                   
-   width: max-content;          
-   margin: 50px auto;           
+   height: 300px;
+   width: 300px;
+   margin: auto 100px;           
    padding: 10px;
    background-color: #fafafa;
    border-radius: 8px;
@@ -49,7 +50,8 @@
    display: flex;
    width: 200px;
    justify-content: space-evenly;
-   margin: 20px auto;
+   position: absolute;
+   margin: -200px 300px auto 600px;
  }
  
  .stick {
@@ -63,11 +65,12 @@
  
  .flat {
    background-color: aqua;
+
  }
  
  button {
    display: block;
-   margin: 20px auto;
+   margin: 50px auto;
    padding: 10px 20px;
    font-family: "Merienda", cursive;
    font-size: 1rem;
@@ -84,8 +87,10 @@
 
  .messages {
    text-align: center;
-   margin: 50px auto;
    font-size: 1.25rem;
+   position: absolute;
+   margin: -300px 75px auto 500px;
+   width: 400px;
  }
 
 
@@ -100,22 +105,32 @@
    display: flex;
    gap: 10px;
    align-items: center;
+   transform: translate(0, -128px);
 }
 
 .bottom-side {
    margin-top: 533px;
-   transform: translate(-317px);
+   transform: translate(-317px, -245px);
    flex-direction: row-reverse;
 }
 
 
 .right-side {
    margin-top: 268px;
+   transform: translate(0, -268px);
+   
 }
 
 .left-side {
    margin-top: 321px;
-   transform: translate(-581px, -55px);
+   transform: translate(-581px, -65px);
    display: flex;
    flex-direction: column-reverse;
 }
+
+.roll {
+   position: absolute;
+   margin: -48px 620px;
+   width: 140px;
+}
+

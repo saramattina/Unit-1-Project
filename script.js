@@ -1,7 +1,5 @@
 /* remember to clean up any unused variables, functions, etc... */
-/* checkForWinner not working- error at line 120 when moving piece to index not part of the array*/
 
-/* add score update to checkForWinner*/
 
 // Variables
 
@@ -146,15 +144,15 @@ const placePiece = () => {
    rollBtn.disabled = true;
    resetBtn.textContent = "Play again?"
       if (currentPlayer === "🔴"){
-         redScore = redScore + 1;
+         redScore = 1;
          playerRedScore.textContent = `Red: ${redScore}`;
          return;
       } else {
-         blueScore = blueScore + 1;
+         blueScore = 1;
          playerBlueScore.textContent = `Blue: ${blueScore}`;
          return;
       }
-   return;
+   // return;
  } else {
 
   board[newPieceIdx] = currentPlayer;
@@ -171,7 +169,6 @@ const handleRollAgain = () => {
    }
 }
 
-//check for numFlatSides & scoping issues
 
 const switchPlayerTurn = () => {
   currentPlayer = currentPlayer === "🔴" ? "🔵" : "🔴";
