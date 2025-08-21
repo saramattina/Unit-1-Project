@@ -30,24 +30,29 @@
       </p>
       <p>
         On your turn, roll the sticks to determine how many spaces to move your
-        piece forward.
+        piece forward. There are 5 possible rolls:
       </p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Yunnori_en.svg/500px-Yunnori_en.svg.png"
+        alt="yoot sticks showing each possible rolls"
+      />
       <p>
-        Move your piece forward. If the opposing player or team's piece is
-        already occupying the space, their piece is bumped off the board and
-        back to start!
+        Move your piece forward beginning from start (the orange square). If the
+        opposing player or team's piece is already occupying the space, their
+        piece is bumped off the board and back to start!
       </p>
       <p>If you roll a mo or yut, take another turn!</p>
       <p>
         The first player or team to move their piece all the way around board,
-        including moving their piece past the final square, wins!
+        including moving their piece past the orange square, wins!
       </p>
       <button id="dialog-btn-close">X</button>
     </dialog>
+
     <div class="middle-section">
       <section class="board">
         <div class="top-side">
-          <div class="sqr" id="0"></div>
+          <div class="sqr first-sqr" id="0"></div>
           <div class="sqr" id="1"></div>
           <div class="sqr" id="2"></div>
           <div class="sqr" id="3"></div>
@@ -76,27 +81,25 @@
           <div class="sqr" id="17"></div>
           <div class="sqr" id="18"></div>
           <div class="sqr" id="19"></div>
-          <!-- <div class="sqr" id="20"></div> -->
         </div>
       </section>
+      <div class="right-middle-section">
+        <div class="messages">
+          <p class="roll-message"></p>
+          <p class="turn-message"></p>
+        </div>
 
-      <div class="messages">
-        <p class="roll-message"></p>
-        <p class="turn-message"></p>
+        <button class="roll">Roll!</button>
+
+        <section class="sticks">
+          <div class="stick" id="stick-one">X</div>
+          <div class="stick" id="stick-two">X</div>
+          <div class="stick" id="stick-three">X</div>
+          <div class="stick" id="stick-four">X</div>
+
+          <p class="roll-result"></p>
+        </section>
       </div>
-      <!-- <div class="turn-message"></div> -->
-
-      <button class="roll">Roll!</button>
-
-      <section class="sticks">
-        <div class="stick" id="stick-one">X</div>
-        <!-- can add round and flat classes -->
-        <div class="stick" id="stick-two">X</div>
-        <div class="stick" id="stick-three">X</div>
-        <div class="stick" id="stick-four">X</div>
-
-        <p class="roll-result"></p>
-      </section>
     </div>
 
     <button class="reset">Reset Game</button>

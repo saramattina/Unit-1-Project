@@ -2,21 +2,29 @@
   margin: 0;
   padding: 0;
   font-family: "Merienda", cursive;
+  background-color: #ffebcd;
 }
 
 header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 50px 100px;
+  padding: 50px 100px 60px 100px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  padding-bottom: 15px;
 }
 
 .score {
-  text-align: right;
+  text-align: center;
+  border: 2px dashed black;
+  padding: 10px;
+}
+
+h3 {
+  text-decoration: underline black solid;
 }
 
 .board {
@@ -25,33 +33,36 @@ h1 {
   gap: 8px;
   height: 300px;
   width: 300px;
-  margin: auto 100px;
+  margin: 10px 100px;
   padding: 10px;
-  background-color: #fafafa;
+  background-color: blanchedalmond;
   border-radius: 8px;
 }
 
 .sqr {
   width: 40px;
   aspect-ratio: 1/1;
-  border: 2px solid black;
+  border: 2px double black;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  background-color: white;
+  background-color: #f5f5f5;
+  border-radius: 5px;
 }
 
 .sqr.hover {
   background-color: #ffe680;
 }
 
+.first-sqr {
+  background-color: darkorange;
+}
+
 .sticks {
   display: flex;
   width: 200px;
   justify-content: space-evenly;
-  position: absolute;
-  margin: -200px 300px auto 600px;
 }
 
 .stick {
@@ -63,26 +74,25 @@ h1 {
   /* transition: background 0.3s; */
   justify-content: center;
   align-items: center;
-  font-size:x-large;
+  font-size: x-large;
 }
 
 .flat {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYSMxbcnEDAYwPwZHjut4pfrr83Py7Jxhlzw&s);
   /* make p text invisible */
   color: rgba(255, 255, 255, 0);
-  
 }
 
 button {
   display: block;
   margin: 50px auto;
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-family: "Merienda", cursive;
   font-size: 1rem;
   cursor: pointer;
   border: 2px solid black;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: rgb(255 206 138);
   /* transition: background 0.3s; */
 }
 
@@ -91,11 +101,8 @@ button:hover {
 }
 
 .messages {
-  text-align: center;
   font-size: 1.25rem;
-  position: absolute;
-  margin: -300px 75px auto 500px;
-  width: 400px;
+  text-align: center;
 }
 
 .left-side,
@@ -133,21 +140,56 @@ button:hover {
 }
 
 .roll {
-  position: absolute;
-  margin: -48px 620px;
   width: 140px;
+}
+
+.roll-message {
+   width: 540px;
 }
 
 dialog {
   text-align: center;
   margin: auto;
   width: 700px;
+  background-color: antiquewhite;
 }
 
 h4 {
   padding: 30px;
+  background-color: antiquewhite;
+  text-decoration: underline 1px black;
+  font-size: larger;
 }
 
 dialog p {
   padding: 10px 20px;
+  background-color: antiquewhite;
+}
+
+#dialog-btn-open {
+  height: 40px;
+}
+
+#dialog-btn-close {
+   margin: 10px auto 20px auto;
+}
+
+img {
+  width: 30rem;
+  height: 15rem;
+}
+
+
+.right-middle-section {
+   display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.middle-section {
+   display: flex;		
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
