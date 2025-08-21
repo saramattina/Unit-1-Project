@@ -1,4 +1,5 @@
 /* remember to clean up any unused variables, functions, etc... */
+//<dialog> for instructions?
 
 
 // Variables
@@ -41,6 +42,10 @@ const playerRedScore = document.querySelector("#player-red-score");
 const playerBlueScore = document.querySelector("#player-blue-score");
 const rollBtn = document.querySelector(".roll");
 const resetBtn = document.querySelector(".reset");
+
+const dialogEl = document.querySelector("dialog");
+const openDialogBtn = document.querySelector("#dialog-btn-open");
+const closeDialogBtn = document.querySelector("#dialog-btn-close")
 
 const stick = document.querySelectorAll(".stick");
 const numFlatSticks = document.getElementsByClassName("flat");
@@ -158,7 +163,6 @@ const placePiece = () => {
   board[newPieceIdx] = currentPlayer;
 //   console.log("new idx: " + newPieceIdx);
  }
-  //   updateBoard();
 };
 
 const handleRollAgain = () => {
@@ -223,6 +227,21 @@ rollBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", init);
 
+
+openDialogBtn.addEventListener("click", () => {
+   dialogEl.showModal();
+   console.log('open dialog button clicked')
+ });
+
+ closeDialogBtn.addEventListener("click", () => {
+   dialogEl.close();
+   console.log('close dialog button clicked')
+ });
+
+
+
 init();
 
-//<dialog> for instructions?
+
+
+

@@ -1,136 +1,153 @@
 * {
-   margin: 0;
-   padding: 0;
-   font-family: "Merienda", cursive;
- }
- 
- header {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   padding: 50px;
- }
- 
- h1 {
-   font-size: 2rem;
- }
- 
- .score {
-   text-align: right;
- }
- 
- .board {
-   display: flex;
-   justify-content: flex-start; 
-   gap: 8px;                   
-   height: 300px;
-   width: 300px;
-   margin: auto 100px;           
-   padding: 10px;
-   background-color: #fafafa;
-   border-radius: 8px;
- }
- 
- .sqr {
-   width: 40px;
-   aspect-ratio: 1/1;          
-   border: 2px solid black;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 1.5rem;  
-   background-color: white;
- }
- 
- .sqr.hover {
-   background-color: #ffe680;  
- }
- 
- .sticks {
-   display: flex;
-   width: 200px;
-   justify-content: space-evenly;
-   position: absolute;
-   margin: -200px 300px auto 600px;
- }
- 
- .stick {
-   display: flex;
-   width: 30px;
-   height: 100px;
-   background-color: yellowgreen;
-   border-radius: 7px;
-   /* transition: background 0.3s; */
- }
- 
- .flat {
-   background-color: aqua;
-
- }
- 
- button {
-   display: block;
-   margin: 50px auto;
-   padding: 10px 20px;
-   font-family: "Merienda", cursive;
-   font-size: 1rem;
-   cursor: pointer;
-   border: 2px solid black;
-   border-radius: 6px;
-   background-color: #fff;
-   /* transition: background 0.3s; */
- }
- 
- button:hover {
-   background-color: #ffe680;
- }
-
- .messages {
-   text-align: center;
-   font-size: 1.25rem;
-   position: absolute;
-   margin: -300px 75px auto 500px;
-   width: 400px;
- }
-
-
-.left-side, .right-side {
-   display: flex;
-   gap: 10px;
-   flex-direction: column;
-   /* margin-top: 300px; */
+  margin: 0;
+  padding: 0;
+  font-family: "Merienda", cursive;
 }
 
-.top-side, .bottom-side {
-   display: flex;
-   gap: 10px;
-   align-items: center;
-   transform: translate(0, -128px);
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px 100px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.score {
+  text-align: right;
+}
+
+.board {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  height: 300px;
+  width: 300px;
+  margin: auto 100px;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+.sqr {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+.sqr.hover {
+  background-color: #ffe680;
+}
+
+.sticks {
+  display: flex;
+  width: 200px;
+  justify-content: space-evenly;
+  position: absolute;
+  margin: -200px 300px auto 600px;
+}
+
+.stick {
+  display: flex;
+  width: 30px;
+  height: 100px;
+  background-image: url(https://images.unsplash.com/photo-1620671716215-b2c6609996fe?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdvb2QlMjB0ZXh0dXJlfGVufDB8fDB8fHww);
+  border-radius: 7px;
+  /* transition: background 0.3s; */
+  justify-content: center;
+  align-items: center;
+  font-size:x-large;
+}
+
+.flat {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYSMxbcnEDAYwPwZHjut4pfrr83Py7Jxhlzw&s);
+  /* make p text invisible */
+  color: rgba(255, 255, 255, 0);
+  
+}
+
+button {
+  display: block;
+  margin: 50px auto;
+  padding: 10px 20px;
+  font-family: "Merienda", cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 6px;
+  background-color: #fff;
+  /* transition: background 0.3s; */
+}
+
+button:hover {
+  background-color: #ffe680;
+}
+
+.messages {
+  text-align: center;
+  font-size: 1.25rem;
+  position: absolute;
+  margin: -300px 75px auto 500px;
+  width: 400px;
+}
+
+.left-side,
+.right-side {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  /* margin-top: 300px; */
+}
+
+.top-side,
+.bottom-side {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transform: translate(0, -128px);
 }
 
 .bottom-side {
-   margin-top: 533px;
-   transform: translate(-317px, -245px);
-   flex-direction: row-reverse;
+  margin-top: 533px;
+  transform: translate(-317px, -245px);
+  flex-direction: row-reverse;
 }
 
-
 .right-side {
-   margin-top: 268px;
-   transform: translate(0, -268px);
-   
+  margin-top: 268px;
+  transform: translate(0, -268px);
 }
 
 .left-side {
-   margin-top: 321px;
-   transform: translate(-581px, -65px);
-   display: flex;
-   flex-direction: column-reverse;
+  margin-top: 321px;
+  transform: translate(-581px, -65px);
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .roll {
-   position: absolute;
-   margin: -48px 620px;
-   width: 140px;
+  position: absolute;
+  margin: -48px 620px;
+  width: 140px;
 }
 
+dialog {
+  text-align: center;
+  margin: auto;
+  width: 700px;
+}
+
+h4 {
+  padding: 30px;
+}
+
+dialog p {
+  padding: 10px 20px;
+}
