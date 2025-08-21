@@ -37,6 +37,8 @@ h3 {
   padding: 10px;
   background-color: blanchedalmond;
   border-radius: 8px;
+  /* transition-delay: 2s;
+  transition-duration: 2s; */
 }
 
 .sqr {
@@ -71,7 +73,7 @@ h3 {
   height: 100px;
   background-image: url(https://images.unsplash.com/photo-1620671716215-b2c6609996fe?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdvb2QlMjB0ZXh0dXJlfGVufDB8fDB8fHww);
   border-radius: 7px;
-  /* transition: background 0.3s; */
+  transition: background 0.4s ease-in-out;
   justify-content: center;
   align-items: center;
   font-size: x-large;
@@ -79,7 +81,6 @@ h3 {
 
 .flat {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYSMxbcnEDAYwPwZHjut4pfrr83Py7Jxhlzw&s);
-  /* make p text invisible */
   color: rgba(255, 255, 255, 0);
 }
 
@@ -93,7 +94,6 @@ button {
   border: 2px solid black;
   border-radius: 6px;
   background-color: rgb(255 206 138);
-  /* transition: background 0.3s; */
 }
 
 button:hover {
@@ -110,7 +110,6 @@ button:hover {
   display: flex;
   gap: 10px;
   flex-direction: column;
-  /* margin-top: 300px; */
 }
 
 .top-side,

@@ -44,7 +44,7 @@ This project will be an online version of Yoot. Two people or two teams can play
 + As an user, I'd like the sticks to animate being tossed, as they would if played in real life
 + As an user, I'd like the diagonal paths on the game board
 + As an user, I'd like to play against the computer
-+ As an user, I'd like to play with the back rule: one of the sticks is labeled back, and if it's the only stick facing down, I can move a piece one space backwards
++ As an user, I'd like to play with the back rule: one of the sticks is labeled back, and if it's the only stick with the flat side up, I can move a piece one space backwards
 + As an user, I'd like to have all four pieces
 
 
