@@ -52,16 +52,12 @@ h3 {
   border-radius: 5px;
 }
 
-.sqr.hover {
-  background-color: #ffe680;
-}
-
 .first-sqr {
-  background-color: darkorange;
+  background-color: #ff8c00;
 }
 
 .final-sqr {
-  background-color: darksalmon;
+  background-color: #e9967a;
 }
 
 .sticks {
@@ -202,7 +198,7 @@ img {
   flex-wrap: wrap;
 }
 
-/* iPhone 16s */
+/* ----------- iPhone 16s ----------- */
 @media only screen and (min-width: 393px) and (max-width: 852px) {
   * {
     margin: 0;
@@ -260,10 +256,6 @@ img {
     border-radius: 5px;
   }
 
-  .sqr.hover {
-    background-color: #ffe680;
-  }
-
   .first-sqr {
     background-color: darkorange;
   }
@@ -312,8 +304,8 @@ img {
     background-color: rgb(255 206 138);
   }
 
-  button:hover {
-    background-color: #ffe680;
+  button:focus {
+    background-color: rgb(255 206 138);
   }
 
   .messages {
@@ -321,7 +313,6 @@ img {
     text-align: center;
     padding: 10px 0;
     margin: 15px auto;
-    /* width: 350px; */
   }
 
   .left-side,
@@ -412,8 +403,10 @@ img {
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .reset {
+    margin: 50px auto;
+  }
 }
 
-.reset {
-  margin: 50px auto;
-}
+

@@ -94,8 +94,8 @@ const init = () => {
   currentPlayer = "🔴";
   let redScore = 0;
   let blueScore = 0;
-  playerRedScore.textContent = `Red: ${redScore}`;
-  playerBlueScore.textContent = `Blue: ${blueScore}`;
+  playerRedScore.textContent = `🔴: ${redScore}`;
+  playerBlueScore.textContent = `🔵: ${blueScore}`;
   turnMessageEl.textContent = turnMessage();
   rollMessageEl.textContent = "";
   rollBtn.disabled = false;
@@ -147,15 +147,15 @@ const placePiece = () => {
     resetBtn.textContent = "Play again?";
     if (currentPlayer === "🔴") {
       redScore = 1;
-      playerRedScore.textContent = `Red: ${redScore}`;
+      playerRedScore.textContent = `🔴: ${redScore}`;
       return;
     } else {
       blueScore = 1;
-      playerBlueScore.textContent = `Blue: ${blueScore}`;
+      playerBlueScore.textContent = `🔵: ${blueScore}`;
       return;
     }
   } else if (newPieceIdx === -1 && oldPieceIdx === 0) {
-    //check for back do roll
+    //check for if player has piece on board[0] and rolls back do 
     board[19] = currentPlayer;
     return;
   } else {
