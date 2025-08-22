@@ -17,5 +17,4 @@
 + Add the diagonal paths to the game board
 + Each team will have 4 game pieces
 + Be able to play against the computer
-+ Add the "back *do*" roll: if the marked stick is the only stick with the flat side up, can move a *mal* piece backwards one space
 + Add animations to when the pieces move on the board
