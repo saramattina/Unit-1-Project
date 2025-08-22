@@ -25,7 +25,7 @@ This project will be an online version of Yoot. Two people or two teams can play
 
 **Initial Landing View**
 
-![initial landing view](https://wireframe.cc/TLU4kt)
+![initial landing view](https://i.imgur.com/0fLgMUN.png)
 
 ## User Stories
 

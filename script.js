@@ -217,7 +217,9 @@ rollBtn.addEventListener("click", () => {
   }
 
   placePiece();
-  updateBoard();
+  setTimeout(() => {
+   updateBoard()
+  }, "1000");
 
   if (!winner && !rollAgain) {
     switchPlayerTurn();
@@ -230,12 +232,12 @@ resetBtn.addEventListener("click", init);
 
 openDialogBtn.addEventListener("click", () => {
    dialogEl.showModal();
-   console.log('open dialog button clicked')
+   // console.log('open dialog button clicked')
  });
 
  closeDialogBtn.addEventListener("click", () => {
    dialogEl.close();
-   console.log('close dialog button clicked')
+   // console.log('close dialog button clicked')
  });
 
 
