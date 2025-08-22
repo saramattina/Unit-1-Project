@@ -59,6 +59,10 @@ h3 {
   background-color: darkorange;
 }
 
+.final-sqr {
+   background-color: darksalmon;
+}
+
 .sticks {
   display: flex;
   width: 200px;
@@ -75,6 +79,10 @@ h3 {
   justify-content: center;
   align-items: center;
   font-size: x-large;
+}
+
+#stick-one {
+   border: 3px solid black;
 }
 
 .flat {

@@ -157,10 +157,14 @@ const placePiece = () => {
          playerBlueScore.textContent = `Blue: ${blueScore}`;
          return;
       }
-   // return;
- } else {
-
+ } else if (newPieceIdx === -1 && oldPieceIdx === 0) {
+   newPieceIdx = 19;
+   board[newPieceIdx] = currentPlayer
+   return;
+ }
+ else {
   board[newPieceIdx] = currentPlayer;
+  return;
 //   console.log("new idx: " + newPieceIdx);
  }
 };
@@ -201,9 +205,14 @@ rollBtn.addEventListener("click", () => {
     rollMessageEl.textContent =
       `${currentPlayer} rolled a yut! Move forward 4 spaces and roll again!`;
     spacesToMove = 4;
-  } else if (numFlatSticks.length === 1) {
+  } else if (numFlatSticks.length === 1 && !stickOne.classList.contains("flat")) {
     rollMessageEl.textContent = `${currentPlayer} rolled a do! Move forward 1 space!`;
+   //  console.log('player rolled a do')
     spacesToMove = 1;
+  } else if (numFlatSticks.length === 1 && stickOne.classList.contains("flat")) {
+      rollMessageEl.textContent = `${currentPlayer} rolled a back do! Move backwards 1 space!`
+      spacesToMove = -1;
+      // console.log("player rolled a back do")
   } else if (numFlatSticks.length === 2) {
     rollMessageEl.textContent = `${currentPlayer} rolled a ge! Move forward 2 spaces!`;
     spacesToMove = 2;
