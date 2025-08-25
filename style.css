@@ -53,11 +53,11 @@ h3 {
 }
 
 .first-sqr {
-  background-color: #ff8c00;
+  background-color: #106100;
 }
 
 .final-sqr {
-  background-color: #e9967a;
+  background-color: #B9441D;
 }
 
 .sticks {
@@ -205,6 +205,7 @@ img {
     padding: 0;
     font-family: "Merienda", cursive;
     background-color: #ffebcd;
+    color: black;
   }
 
   header {
@@ -257,11 +258,11 @@ img {
   }
 
   .first-sqr {
-    background-color: darkorange;
+    background-color: #106100;
   }
 
   .final-sqr {
-    background-color: darksalmon;
+    background-color: #B9441D;
   }
 
   .sticks {

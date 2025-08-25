@@ -1,5 +1,3 @@
-/* remember to clean up any unused variables, functions, etc... */
-
 // Variables
 
 let board = [
